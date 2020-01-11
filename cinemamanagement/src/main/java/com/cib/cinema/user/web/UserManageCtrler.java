@@ -14,6 +14,7 @@ public class UserManageCtrler {
 	
 	@RequestMapping("/toIndex.do")
 	public String show() {
+		
 		return "index";
 	}
 	
