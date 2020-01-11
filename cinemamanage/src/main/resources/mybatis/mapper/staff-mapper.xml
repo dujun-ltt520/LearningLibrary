@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+       
+<mapper namespace="com.dujun.springdemo.webapp.dao.StaffDao" >
+
+	<!-- <resultMap id="StaffResultMap" type="com.dujun.springdemo.webapp.entity.Staff" >
+        <result column="staffid"				property="staffid"			jdbcType="INTEGER"  />	
+		<result column="staffname"		    	property="staffname"	    jdbcType="VARCHAR"  />
+		<result column="loginid"		   	    property="loginid"		   	jdbcType="VARCHAR"  />
+		<result column="loginname"		    	property="loginname"	    jdbcType="VARCHAR"  />
+		<result column="loginpawd"		    	property="loginpawd"		jdbcType="VARCHAR"  />
+		<result column="telphone"		    	property="telphone"		    jdbcType="VARCHAR"  />
+		<result column="address"		    	property="address"			jdbcType="VARCHAR"  />
+		<result column="registrationtime"    	property="registrationtime" jdbcType="TIMESTAMP"  />
+		<result column="updatetime"		    	property="updatetime"		jdbcType="TIMESTAMP"  />
+		<result column="userstatus"		    	property="userstatus"		jdbcType="CHAR"  />
+		<result column="deleteflag"		    	property="deleteflag"		jdbcType="CHAR"  />
+   </resultMap>  -->
+
+	<!-- 根据loginid 查询对应的staff信息 
+	<select id="queryStaffList"  resultMap="StaffResultMap">
+		select 
+			staffid				,	  		
+			staffname		  	,	
+			loginid		   	  	,
+		    loginname		    ,
+		    loginpawd		    ,
+		    telphone		    ,
+		    address			    ,
+		    registrationtime	,
+		    updatetime		    ,
+		    userstatus		    ,
+		    deleteflag		    
+		from staff 	
+	</select> -->
+	
+	<!--  
+	<select id="queryStaffById" parameterType="String" resultMap="StaffResultMap">
+		select
+			DISTINCT  
+			staffid				,	  		
+			staffname		  	,	
+			loginid		   	  	,
+		    loginname		    ,
+		    loginpawd		    ,
+		    telphone		    ,
+		    address			    ,
+		    registrationtime	,
+		    updatetime		    ,
+		    userstatus		    ,
+		    deleteflag		    
+		from staff 	
+		where 	loginid = #{loginid}	
+		
+	</select> -->
+
+	
+</mapper>        
+           
+        
+        

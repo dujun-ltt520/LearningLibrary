@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <properties>
+        <!-- 文件输出格式 -->
+        <property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} |-%-5level [%thread] %c [%L] -| %msg%n</property>
+        <Property name="instance">spring-boot-log4j2-log</Property>
+        <Property name="log.dir">D:\logs\log4j2</Property>
+        
+        <!-- 控制台显示的日志最低级别 -->
+        <property name="console_print_level">DEBUG</property>
+    </properties>
+	
+
+    <appenders>
+        <Console name="CONSOLE" target="system_out">
+        	<!-- 设置控制台只输出level及以上级别的信息(onMatch),其他的直接拒绝(onMismatch)-->
+            <ThresholdFilter level="${console_print_level}" onMatch="ACCEPT" onMismatch="DENY"/>
+            
+            <PatternLayout pattern="${PATTERN}"/>
+        </Console>
+
+        <File name="File" fileName="${log.dir}/${instance}.log">
+            <PatternLayout pattern="${PATTERN}"/>
+        </File>
+    </appenders>
+
+    <loggers>
+        <!-- root logger 配置 -->
+        <root level="info">
+            <appenderref ref="CONSOLE"/>
+            <appenderref ref="File"/>
+        </root>
+    </loggers>
+
+</configuration>
